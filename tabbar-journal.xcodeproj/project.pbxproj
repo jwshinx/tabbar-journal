@@ -15,6 +15,7 @@
 		184469F41E357DBB00ACACCB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 184469F21E357DBB00ACACCB /* LaunchScreen.storyboard */; };
 		184469FF1E357DBB00ACACCB /* tabbar_journalTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 184469FE1E357DBB00ACACCB /* tabbar_journalTests.swift */; };
 		18446A0A1E357DBB00ACACCB /* tabbar_journalUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18446A091E357DBB00ACACCB /* tabbar_journalUITests.swift */; };
+		18446A181E35894300ACACCB /* BandsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18446A171E35894300ACACCB /* BandsTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		18446A051E357DBB00ACACCB /* tabbar-journalUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "tabbar-journalUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		18446A091E357DBB00ACACCB /* tabbar_journalUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tabbar_journalUITests.swift; sourceTree = "<group>"; };
 		18446A0B1E357DBB00ACACCB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		18446A171E35894300ACACCB /* BandsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BandsTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +105,7 @@
 				184469E91E357DBB00ACACCB /* FirstViewController.swift */,
 				184469EB1E357DBB00ACACCB /* SecondViewController.swift */,
 				184469ED1E357DBB00ACACCB /* Main.storyboard */,
+				18446A171E35894300ACACCB /* BandsTableViewController.swift */,
 				184469F01E357DBB00ACACCB /* Assets.xcassets */,
 				184469F21E357DBB00ACACCB /* LaunchScreen.storyboard */,
 				184469F51E357DBB00ACACCB /* Info.plist */,
@@ -263,6 +266,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				184469EC1E357DBB00ACACCB /* SecondViewController.swift in Sources */,
+				18446A181E35894300ACACCB /* BandsTableViewController.swift in Sources */,
 				184469E81E357DBB00ACACCB /* AppDelegate.swift in Sources */,
 				184469EA1E357DBB00ACACCB /* FirstViewController.swift in Sources */,
 			);
