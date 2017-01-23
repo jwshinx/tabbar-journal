@@ -264,10 +264,70 @@
             </objects>
             <point key="canvasLocation" x="1688.8" y="359.37031484257875"/>
         </scene>
+        <!--Dashboards-->
+        <scene sceneID="cEN-ux-4DI">
+            <objects>
+                <tableViewController id="Il2-ae-8p9" userLabel="Dashboards" customClass="DashboardsTableViewController" customModule="tabbar_journal" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="65" sectionHeaderHeight="28" sectionFooterHeight="28" id="C2b-28-50w">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="65" id="d4b-rn-QbV">
+                                <rect key="frame" x="0.0" y="28" width="375" height="65"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="d4b-rn-QbV" id="sum-7E-d3J">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="64"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PG4-Zb-29j">
+                                            <rect key="frame" x="21" y="22" width="290" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="PG4-Zb-29j" firstAttribute="leading" secondItem="sum-7E-d3J" secondAttribute="leadingMargin" constant="13" id="Jtm-cW-ovx"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="PG4-Zb-29j" secondAttribute="trailing" constant="56" id="RmQ-G8-MWQ"/>
+                                        <constraint firstItem="PG4-Zb-29j" firstAttribute="centerY" secondItem="sum-7E-d3J" secondAttribute="centerY" id="Ypg-Od-6jq"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="Il2-ae-8p9" id="33c-Je-Ops"/>
+                            <outlet property="delegate" destination="Il2-ae-8p9" id="cgF-Fp-aH9"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Dashboards" id="51i-Td-jAd"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WBx-Wb-jlU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-879.20000000000005" y="777.66116941529242"/>
+        </scene>
+        <!--Dashboards Navigation-->
+        <scene sceneID="Wg6-kW-0Gh">
+            <objects>
+                <navigationController id="6yJ-1g-Xgz" userLabel="Dashboards Navigation" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Dashboards" image="star" id="c5E-8Y-DW2"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="aMo-7x-VLM">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="Il2-ae-8p9" kind="relationship" relationship="rootViewController" id="ybG-nn-GAG"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TZp-Rc-x7F" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1831" y="778"/>
+        </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">
             <objects>
                 <tabBarController id="49e-Tb-3d3" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="5Bk-eL-YtN"/>
                     <nil key="simulatedBottomBarMetrics"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="W28-zg-YXA">
                         <rect key="frame" x="0.0" y="975" width="768" height="49"/>
@@ -279,6 +339,7 @@
                         <segue destination="8rJ-Kc-sve" kind="relationship" relationship="viewControllers" id="lzU-1b-eKA"/>
                         <segue destination="57t-kS-NXI" kind="relationship" relationship="viewControllers" id="oJx-yr-HuF"/>
                         <segue destination="svI-BR-u8r" kind="relationship" relationship="viewControllers" id="BI2-ct-p78"/>
+                        <segue destination="6yJ-1g-Xgz" kind="relationship" relationship="viewControllers" id="LNz-XZ-Omb"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>
