@@ -109,8 +109,8 @@
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="76"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b5B-Mf-zJ4">
-                                            <rect key="frame" x="22" y="28" width="247" height="21"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b5B-Mf-zJ4">
+                                            <rect key="frame" x="22" y="38.5" width="247" height="0.0"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
@@ -122,6 +122,9 @@
                                         <constraint firstItem="b5B-Mf-zJ4" firstAttribute="centerY" secondItem="hqh-4h-UiS" secondAttribute="centerY" id="ysA-Ef-KOQ"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="pkm-Nr-hQG" kind="show" identifier="albumsSegue" id="cuD-3x-VrR"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -134,6 +137,48 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wor-OO-mup" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="508" y="1464.9175412293855"/>
+        </scene>
+        <!--Albums-->
+        <scene sceneID="dQi-K9-x1j">
+            <objects>
+                <tableViewController id="pkm-Nr-hQG" userLabel="Albums" customClass="AlbumsTableViewController" customModule="tabbar_journal" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="113" sectionHeaderHeight="28" sectionFooterHeight="28" id="PcE-2x-Kvq">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="113" id="hGl-8L-bw6">
+                                <rect key="frame" x="0.0" y="28" width="375" height="113"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="hGl-8L-bw6" id="TCR-Se-rDL">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="112"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Eeh-YI-bwU">
+                                            <rect key="frame" x="21" y="35" width="249" height="43"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="Eeh-YI-bwU" firstAttribute="centerY" secondItem="TCR-Se-rDL" secondAttribute="centerY" id="CcM-RJ-bQf"/>
+                                        <constraint firstItem="Eeh-YI-bwU" firstAttribute="top" secondItem="TCR-Se-rDL" secondAttribute="topMargin" constant="27" id="gTS-Ie-qh6"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="Eeh-YI-bwU" secondAttribute="trailing" constant="97" id="hEL-3K-eaI"/>
+                                        <constraint firstItem="Eeh-YI-bwU" firstAttribute="leading" secondItem="TCR-Se-rDL" secondAttribute="leadingMargin" constant="13" id="oFb-JS-GfV"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="pkm-Nr-hQG" id="dt4-yg-g8j"/>
+                            <outlet property="delegate" destination="pkm-Nr-hQG" id="bIn-aA-BL7"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7r8-yL-fLj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1292" y="1763.568215892054"/>
         </scene>
         <!--Bands-->
         <scene sceneID="kh0-gL-lXQ">

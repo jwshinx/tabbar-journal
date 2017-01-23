@@ -1,5 +1,5 @@
 //
-//  BandsTableTableViewController.swift
+//  AlbumsTableViewController.swift
 //  tabbar-journal
 //
 //  Created by Joel Shin on 1/22/17.
@@ -8,14 +8,20 @@
 
 import UIKit
 
-class BandsTableViewController: UITableViewController {
+class AlbumsTableViewController: UITableViewController {
     
-    var bands:[String] = ["Radiohead", "Nirvana", "Beatles", "Air"]
+    var selectedBand:String?
+    
+    var albums:[String: [String]] = [
+        "Radiohead": ["The Bends", "OK Computer", "Amnesiac"],
+        "Nirvana"  : ["In Utero", "Bleach"],
+        "Beatles"  : ["White", "Yellow Submarine", "Rubber Maid", "Abbey Row", "Srgt Peppers"],
+        "Air"      : ["Merci", "La Boulange"]
+    ]
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("+++> BTVC viewDidLoad")
-
+        print("+++> ATVC viewDidLoad selectedBand: \(selectedBand!)")
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -30,57 +36,26 @@ class BandsTableViewController: UITableViewController {
 
     // MARK: - Table view data source
 
-    func numberOfSections(in tableView: UITableView) -> Int {
-        print("+++> BTVC ")
+    /*override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
+        return 0
+    }*/
+    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        print("+++> BTVC numberOfRowsInSection")
-        return bands.count
+        return albums[selectedBand!]!.count
     }
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        print("+++> BTVC cellForRowAt")
+        print("+++> ATVC cellForRowAt \(selectedBand!)")
         let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath)
-        cell.textLabel?.text = bands[indexPath.row]
+        cell.textLabel?.text = albums[selectedBand!]![indexPath.row]
+        // cell.itemImageView.image = image
         return cell
     }
-
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        let dest = segue.destinationViewController as! AlbumsTableViewController
-        if segue.identifier == "albumsSegue" {
-            print("+++> prepareForSegue albumsSegue")
-            dest.selectedBand = "my selected band"
-            
-            
-            let selectedRow = tableView.indexPathForSelectedRow?.row
-            if let dest = segue.destinationViewController as? AlbumsTableViewController {
-                print("+++>    AlbumsViewController yes!")
-                dest.selectedBand = bands[selectedRow!]
-                dest.title = bands[selectedRow!]
-            } else {
-                print("+++>    AlbumsViewController no!")
-            }
-        } else {
-            print("+++> prepareForSegue not albumsSegue")
-            dest.selectedBand = "n/a"
-        }
-    }
-    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        print("+++> BTVC didSelectRowAtIndexPath")
-    }
-    /*
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
-
-        return cell
-    }
-    */
 
     /*
     // Override to support conditional editing of the table view.
