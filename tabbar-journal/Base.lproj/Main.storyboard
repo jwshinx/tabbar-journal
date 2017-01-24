@@ -180,6 +180,34 @@
             </objects>
             <point key="canvasLocation" x="1292" y="1763.568215892054"/>
         </scene>
+        <!--Cards-->
+        <scene sceneID="ytM-hh-F6a">
+            <objects>
+                <tableViewController id="2cK-v8-U2f" userLabel="Cards" customClass="CardsTableViewController" customModule="tabbar_journal" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="neH-7D-4bR">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="Imy-Cj-RPg">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Imy-Cj-RPg" id="vfD-MV-UV0">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="2cK-v8-U2f" id="HQY-LF-0Cy"/>
+                            <outlet property="delegate" destination="2cK-v8-U2f" id="JqQ-vv-ZL9"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BJ6-Je-UHY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1370" y="1503"/>
+        </scene>
         <!--Bands-->
         <scene sceneID="kh0-gL-lXQ">
             <objects>
@@ -280,8 +308,8 @@
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="64"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PG4-Zb-29j">
-                                            <rect key="frame" x="21" y="22" width="290" height="21"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PG4-Zb-29j">
+                                            <rect key="frame" x="21" y="32.5" width="290" height="0.0"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
@@ -293,6 +321,9 @@
                                         <constraint firstItem="PG4-Zb-29j" firstAttribute="centerY" secondItem="sum-7E-d3J" secondAttribute="centerY" id="Ypg-Od-6jq"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="2cK-v8-U2f" kind="show" identifier="cardsSegue" id="Yd3-zr-5zg"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>

@@ -1,17 +1,25 @@
 //
-//  DashboardsTableViewController.swift
+//  CardsTableViewController.swift
 //  tabbar-journal
 //
-//  Created by Joel Shin on 1/22/17.
+//  Created by Joel Shin on 1/23/17.
 //  Copyright © 2017 Joel Shin. All rights reserved.
 //
 
 import UIKit
 
-class DashboardsTableViewController: UITableViewController {
+class CardsTableViewController: UITableViewController {
 
-    var dashboards:[String] = ["People", "Grants", "Payments", "Organizations"]
+    var selectedDashboard:String?
+    
+    var cards:[String: [String]] = [
+        "Grants"        : ["Genius Award", "New Artist", "Prime Educator"],
+        "Payments"      : ["$100", "$900"],
+        "Organizations" : ["Red Cross", "ACLU", "Boys and Girls Club"],
+        "People"        : ["Marty McFly", "Barack Obama"]
+    ]
 
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -29,50 +37,32 @@ class DashboardsTableViewController: UITableViewController {
 
     // MARK: - Table view data source
 
-    
-    /*override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 1
-    }*/
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return dashboards.count
+        return cards[selectedDashboard!]!.count
     }
+    
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        print("+++> DTVC cellForRowAt")
+        print("+++> CTVC cellForRowAt \(selectedDashboard!)")
         let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath)
-        cell.textLabel?.text = dashboards[indexPath.row]
+        cell.textLabel?.text = cards[selectedDashboard!]![indexPath.row]
+        // cell.itemImageView.image = image
         return cell
     }
+    
+    /*
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
 
-    // MARK: - Navigation
+        // Configure the cell...
 
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        let dest = segue.destinationViewController as! CardsTableViewController
-        if segue.identifier == "cardsSegue" {
-            print("+++> prepareForSegue cardsSegue")
-            dest.selectedDashboard = "my selected dashboard"
-            
-            let selectedRow = tableView.indexPathForSelectedRow?.row
-            if let dest = segue.destinationViewController as? CardsTableViewController {
-                print("+++>    CardsTableViewController yes!")
-                dest.selectedDashboard = dashboards[selectedRow!]
-                dest.title = dashboards[selectedRow!]
-            } else {
-                print("+++>    CardsTableViewController no!")
-            }
-        } else {
-            print("+++> prepareForSegue not albumsSegue")
-            dest.selectedDashboard = "n/a"
-        }
+        return cell
     }
-    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        print("+++> DTVC didSelectRowAtIndexPath")
-    }
+    */
 
     /*
     // Override to support conditional editing of the table view.
@@ -106,6 +96,16 @@ class DashboardsTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
         // Return false if you do not want the item to be re-orderable.
         return true
+    }
+    */
+
+    /*
+    // MARK: - Navigation
+
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Get the new view controller using segue.destinationViewController.
+        // Pass the selected object to the new view controller.
     }
     */
 
