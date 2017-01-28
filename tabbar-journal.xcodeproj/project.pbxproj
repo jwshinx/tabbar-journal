@@ -19,6 +19,10 @@
 		18446A1A1E359D1F00ACACCB /* AlbumsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18446A191E359D1F00ACACCB /* AlbumsTableViewController.swift */; };
 		18446A1C1E35E88600ACACCB /* DashboardsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18446A1B1E35E88600ACACCB /* DashboardsTableViewController.swift */; };
 		18446A1E1E37389F00ACACCB /* CardsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18446A1D1E37389F00ACACCB /* CardsTableViewController.swift */; };
+		18D6E72E1E3D07F400BC19EF /* PhotosTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D6E72D1E3D07F400BC19EF /* PhotosTableViewController.swift */; };
+		18D6E7301E3D0BB900BC19EF /* Feed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D6E72F1E3D0BB900BC19EF /* Feed.swift */; };
+		18D6E7321E3D0BE300BC19EF /* FeedItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D6E7311E3D0BE300BC19EF /* FeedItem.swift */; };
+		18D6E7341E3D0C6200BC19EF /* PhotosTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D6E7331E3D0C6200BC19EF /* PhotosTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +61,10 @@
 		18446A191E359D1F00ACACCB /* AlbumsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlbumsTableViewController.swift; sourceTree = "<group>"; };
 		18446A1B1E35E88600ACACCB /* DashboardsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardsTableViewController.swift; sourceTree = "<group>"; };
 		18446A1D1E37389F00ACACCB /* CardsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardsTableViewController.swift; sourceTree = "<group>"; };
+		18D6E72D1E3D07F400BC19EF /* PhotosTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotosTableViewController.swift; sourceTree = "<group>"; };
+		18D6E72F1E3D0BB900BC19EF /* Feed.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Feed.swift; sourceTree = "<group>"; };
+		18D6E7311E3D0BE300BC19EF /* FeedItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedItem.swift; sourceTree = "<group>"; };
+		18D6E7331E3D0C6200BC19EF /* PhotosTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotosTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +119,10 @@
 				184469E91E357DBB00ACACCB /* FirstViewController.swift */,
 				184469EB1E357DBB00ACACCB /* SecondViewController.swift */,
 				184469ED1E357DBB00ACACCB /* Main.storyboard */,
+				18D6E72F1E3D0BB900BC19EF /* Feed.swift */,
+				18D6E7311E3D0BE300BC19EF /* FeedItem.swift */,
+				18D6E72D1E3D07F400BC19EF /* PhotosTableViewController.swift */,
+				18D6E7331E3D0C6200BC19EF /* PhotosTableViewCell.swift */,
 				18446A1D1E37389F00ACACCB /* CardsTableViewController.swift */,
 				18446A1B1E35E88600ACACCB /* DashboardsTableViewController.swift */,
 				18446A191E359D1F00ACACCB /* AlbumsTableViewController.swift */,
@@ -275,11 +287,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				184469EC1E357DBB00ACACCB /* SecondViewController.swift in Sources */,
+				18D6E7301E3D0BB900BC19EF /* Feed.swift in Sources */,
 				18446A181E35894300ACACCB /* BandsTableViewController.swift in Sources */,
+				18D6E7341E3D0C6200BC19EF /* PhotosTableViewCell.swift in Sources */,
 				18446A1C1E35E88600ACACCB /* DashboardsTableViewController.swift in Sources */,
 				184469E81E357DBB00ACACCB /* AppDelegate.swift in Sources */,
 				18446A1E1E37389F00ACACCB /* CardsTableViewController.swift in Sources */,
 				184469EA1E357DBB00ACACCB /* FirstViewController.swift in Sources */,
+				18D6E72E1E3D07F400BC19EF /* PhotosTableViewController.swift in Sources */,
+				18D6E7321E3D0BE300BC19EF /* FeedItem.swift in Sources */,
 				18446A1A1E359D1F00ACACCB /* AlbumsTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -523,6 +539,7 @@
 				18446A101E357DBB00ACACCB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		18446A111E357DBB00ACACCB /* Build configuration list for PBXNativeTarget "tabbar-journalTests" */ = {
 			isa = XCConfigurationList;
@@ -531,6 +548,7 @@
 				18446A131E357DBB00ACACCB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		18446A141E357DBB00ACACCB /* Build configuration list for PBXNativeTarget "tabbar-journalUITests" */ = {
 			isa = XCConfigurationList;
@@ -539,6 +557,7 @@
 				18446A161E357DBB00ACACCB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
