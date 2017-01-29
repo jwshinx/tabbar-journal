@@ -67,7 +67,7 @@ class PhotosTableViewController : UITableViewController {
 
     // JWS loads feed and feeditems via api url
     // after feed item loaded, completion block is called
-    
+
     func updateFeed(url: NSURL, completion: (feed: Feed?) -> Void) {
         // updateFeed(url, completion: <#T##(feed: Feed?) -> Void#>)
         print("+++> PTVC.updateFeed start")
@@ -77,6 +77,14 @@ class PhotosTableViewController : UITableViewController {
             // print("+++> PTVC.updateFeed response: \(response)")
             if error == nil && data != nil {
                 let feed = Feed(data: data!, sourceURL: url)
+                if let goodFeed = feed {
+                    if self.saveFeed(goodFeed) {
+                        NSUserDefaults.standardUserDefaults().setObject(NSDate(), forKey: "lastUpdate")
+                    }
+                }
+
+                print("+++> loaded Remote feed! <++++++++++++++++")
+
                 NSOperationQueue.mainQueue().addOperationWithBlock({ () -> Void in
                     print("+++> PTVC.updateFeed lets call completion")
                     completion(feed: feed)
