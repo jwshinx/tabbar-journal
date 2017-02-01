@@ -19,6 +19,13 @@
 		18446A1A1E359D1F00ACACCB /* AlbumsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18446A191E359D1F00ACACCB /* AlbumsTableViewController.swift */; };
 		18446A1C1E35E88600ACACCB /* DashboardsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18446A1B1E35E88600ACACCB /* DashboardsTableViewController.swift */; };
 		18446A1E1E37389F00ACACCB /* CardsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18446A1D1E37389F00ACACCB /* CardsTableViewController.swift */; };
+		18827E671E41DE41003F7BE0 /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18827E661E41DE41003F7BE0 /* DataController.swift */; };
+		18827E6A1E41DFEE003F7BE0 /* DataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 18827E681E41DFEE003F7BE0 /* DataModel.xcdatamodeld */; };
+		18827E741E41E2F8003F7BE0 /* ItalyImageFeedTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18827E731E41E2F8003F7BE0 /* ItalyImageFeedTableViewController.swift */; };
+		18827E791E41E5FD003F7BE0 /* Image+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18827E751E41E5FD003F7BE0 /* Image+CoreDataClass.swift */; };
+		18827E7A1E41E5FD003F7BE0 /* Image+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18827E761E41E5FD003F7BE0 /* Image+CoreDataProperties.swift */; };
+		18827E7B1E41E5FD003F7BE0 /* Tag+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18827E771E41E5FD003F7BE0 /* Tag+CoreDataClass.swift */; };
+		18827E7C1E41E5FD003F7BE0 /* Tag+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18827E781E41E5FD003F7BE0 /* Tag+CoreDataProperties.swift */; };
 		18D6E72E1E3D07F400BC19EF /* PhotosTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D6E72D1E3D07F400BC19EF /* PhotosTableViewController.swift */; };
 		18D6E7301E3D0BB900BC19EF /* Feed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D6E72F1E3D0BB900BC19EF /* Feed.swift */; };
 		18D6E7321E3D0BE300BC19EF /* FeedItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D6E7311E3D0BE300BC19EF /* FeedItem.swift */; };
@@ -61,6 +68,13 @@
 		18446A191E359D1F00ACACCB /* AlbumsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlbumsTableViewController.swift; sourceTree = "<group>"; };
 		18446A1B1E35E88600ACACCB /* DashboardsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardsTableViewController.swift; sourceTree = "<group>"; };
 		18446A1D1E37389F00ACACCB /* CardsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardsTableViewController.swift; sourceTree = "<group>"; };
+		18827E661E41DE41003F7BE0 /* DataController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
+		18827E691E41DFEE003F7BE0 /* DataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataModel.xcdatamodel; sourceTree = "<group>"; };
+		18827E731E41E2F8003F7BE0 /* ItalyImageFeedTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItalyImageFeedTableViewController.swift; sourceTree = "<group>"; };
+		18827E751E41E5FD003F7BE0 /* Image+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Image+CoreDataClass.swift"; path = "../Image+CoreDataClass.swift"; sourceTree = "<group>"; };
+		18827E761E41E5FD003F7BE0 /* Image+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Image+CoreDataProperties.swift"; path = "../Image+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		18827E771E41E5FD003F7BE0 /* Tag+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Tag+CoreDataClass.swift"; path = "../Tag+CoreDataClass.swift"; sourceTree = "<group>"; };
+		18827E781E41E5FD003F7BE0 /* Tag+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Tag+CoreDataProperties.swift"; path = "../Tag+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		18D6E72D1E3D07F400BC19EF /* PhotosTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotosTableViewController.swift; sourceTree = "<group>"; };
 		18D6E72F1E3D0BB900BC19EF /* Feed.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Feed.swift; sourceTree = "<group>"; };
 		18D6E7311E3D0BE300BC19EF /* FeedItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedItem.swift; sourceTree = "<group>"; };
@@ -115,6 +129,7 @@
 		184469E61E357DBB00ACACCB /* tabbar-journal */ = {
 			isa = PBXGroup;
 			children = (
+				18827E651E41DE2D003F7BE0 /* italy */,
 				184469E71E357DBB00ACACCB /* AppDelegate.swift */,
 				184469E91E357DBB00ACACCB /* FirstViewController.swift */,
 				184469EB1E357DBB00ACACCB /* SecondViewController.swift */,
@@ -130,6 +145,7 @@
 				184469F01E357DBB00ACACCB /* Assets.xcassets */,
 				184469F21E357DBB00ACACCB /* LaunchScreen.storyboard */,
 				184469F51E357DBB00ACACCB /* Info.plist */,
+				18827E731E41E2F8003F7BE0 /* ItalyImageFeedTableViewController.swift */,
 			);
 			path = "tabbar-journal";
 			sourceTree = "<group>";
@@ -150,6 +166,19 @@
 				18446A0B1E357DBB00ACACCB /* Info.plist */,
 			);
 			path = "tabbar-journalUITests";
+			sourceTree = "<group>";
+		};
+		18827E651E41DE2D003F7BE0 /* italy */ = {
+			isa = PBXGroup;
+			children = (
+				18827E751E41E5FD003F7BE0 /* Image+CoreDataClass.swift */,
+				18827E761E41E5FD003F7BE0 /* Image+CoreDataProperties.swift */,
+				18827E771E41E5FD003F7BE0 /* Tag+CoreDataClass.swift */,
+				18827E781E41E5FD003F7BE0 /* Tag+CoreDataProperties.swift */,
+				18827E661E41DE41003F7BE0 /* DataController.swift */,
+				18827E681E41DFEE003F7BE0 /* DataModel.xcdatamodeld */,
+			);
+			name = italy;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -287,16 +316,23 @@
 			buildActionMask = 2147483647;
 			files = (
 				184469EC1E357DBB00ACACCB /* SecondViewController.swift in Sources */,
+				18827E7B1E41E5FD003F7BE0 /* Tag+CoreDataClass.swift in Sources */,
+				18827E671E41DE41003F7BE0 /* DataController.swift in Sources */,
 				18D6E7301E3D0BB900BC19EF /* Feed.swift in Sources */,
 				18446A181E35894300ACACCB /* BandsTableViewController.swift in Sources */,
 				18D6E7341E3D0C6200BC19EF /* PhotosTableViewCell.swift in Sources */,
 				18446A1C1E35E88600ACACCB /* DashboardsTableViewController.swift in Sources */,
 				184469E81E357DBB00ACACCB /* AppDelegate.swift in Sources */,
+				18827E7C1E41E5FD003F7BE0 /* Tag+CoreDataProperties.swift in Sources */,
+				18827E7A1E41E5FD003F7BE0 /* Image+CoreDataProperties.swift in Sources */,
 				18446A1E1E37389F00ACACCB /* CardsTableViewController.swift in Sources */,
 				184469EA1E357DBB00ACACCB /* FirstViewController.swift in Sources */,
+				18827E791E41E5FD003F7BE0 /* Image+CoreDataClass.swift in Sources */,
 				18D6E72E1E3D07F400BC19EF /* PhotosTableViewController.swift in Sources */,
+				18827E6A1E41DFEE003F7BE0 /* DataModel.xcdatamodeld in Sources */,
 				18D6E7321E3D0BE300BC19EF /* FeedItem.swift in Sources */,
 				18446A1A1E359D1F00ACACCB /* AlbumsTableViewController.swift in Sources */,
+				18827E741E41E2F8003F7BE0 /* ItalyImageFeedTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -560,6 +596,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		18827E681E41DFEE003F7BE0 /* DataModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				18827E691E41DFEE003F7BE0 /* DataModel.xcdatamodel */,
+			);
+			currentVersion = 18827E691E41DFEE003F7BE0 /* DataModel.xcdatamodel */;
+			path = DataModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 184469DC1E357DBA00ACACCB /* Project object */;
 }

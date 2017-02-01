@@ -13,7 +13,7 @@
         <!--Italy Photos-->
         <scene sceneID="A1C-S6-CKI">
             <objects>
-                <tableViewController id="zLt-dh-qcj" userLabel="Italy Photos" sceneMemberID="viewController">
+                <tableViewController id="zLt-dh-qcj" userLabel="Italy Photos" customClass="ItalyImageFeedTableViewController" customModule="tabbar_journal" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="110" sectionHeaderHeight="28" sectionFooterHeight="28" id="1nY-g5-cn1">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
