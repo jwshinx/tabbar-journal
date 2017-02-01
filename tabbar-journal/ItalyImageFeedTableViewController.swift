@@ -10,9 +10,9 @@ import UIKit
 import CoreData
 
 class ItalyImageFeedTableViewController: UITableViewController {
-    var feed: Feed? {
+    var feed: ItalyFeed? {
         didSet {
-            print("+++> IIFTVC didSet feed")
+            print("+++> IIFTVC didSet italyFeed")
             print("+++> IIFTVC didSet lets reload data <+++++++++")
             self.tableView.reloadData()
         }
@@ -21,7 +21,7 @@ class ItalyImageFeedTableViewController: UITableViewController {
     var urlSession: NSURLSession!
     
     override func viewWillAppear(animated: Bool) {
-        print("+++> IIFTVC")
+        print("+++> IIFTVC viewWillAppear")
         super.viewWillAppear(animated)
         
         let configuration = NSURLSessionConfiguration.defaultSessionConfiguration()

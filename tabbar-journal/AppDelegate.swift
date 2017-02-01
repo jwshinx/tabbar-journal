@@ -17,7 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // NSUserDefaults.standardUserDefaults().registerDefaults(["PhotoFeedURLString": "https://api.flickr.com/services/feeds/photos_public.gne?tags=pantheon&format=json&nojsoncallback=1"])
 
-        NSUserDefaults.standardUserDefaults().registerDefaults(["ItalyPhotoFeedURLString": "https://api.flickr.com/services/feeds/photos_public.gne?tags=italy&format=json&nojsoncallback=1"])
+        NSUserDefaults.standardUserDefaults().registerDefaults(["ItalyImageFeedURLString": "https://api.flickr.com/services/feeds/photos_public.gne?tags=italy&format=json&nojsoncallback=1"])
         print("+++> AD application")
         self.dataController = DataController()
         return true
@@ -38,7 +38,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func applicationDidBecomeActive(application: UIApplication) {
-        let urlString = NSUserDefaults.standardUserDefaults().stringForKey("ItalyPhotoFeedURLString")
+        let urlString = NSUserDefaults.standardUserDefaults().stringForKey("ItalyImageFeedURLString")
         // let x = NSUserDefaults.standardUserDefaults().stringForKey("xxx")
         print("+++> AD applicationDidBecomeActive urlString: \(urlString)")
         guard let foundURLString = urlString else {
@@ -53,7 +53,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
     }
 
-    func loadOrUpdateFeed(url: NSURL, completion: (feed: Feed?) -> Void) {
+    func loadOrUpdateFeed(url: NSURL, completion: (feed: ItalyFeed?) -> Void) {
         print("+++> AD loadOrUpdateFeed")
         let lastUpdatedSetting = NSUserDefaults.standardUserDefaults().objectForKey("lastUpdate") as? NSDate
         
@@ -62,33 +62,33 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             shouldUpdate = false
         }
         if shouldUpdate {
-            self.updateFeed(url, completion: completion)
+            self.updateItalyFeed(url, completion: completion)
         } else {
-            self.readFeed { (feed) -> Void in
+            self.readItalyFeed { (feed) -> Void in
                 if let foundSavedFeed = feed where foundSavedFeed.sourceURL.absoluteString == url.absoluteString {
                     print("+++> AD loaded saved feed!")
                     NSOperationQueue.mainQueue().addOperationWithBlock({ () -> Void in
                         completion(feed: foundSavedFeed)
                     })
                 } else {
-                    self.updateFeed(url, completion: completion)
+                    self.updateItalyFeed(url, completion: completion)
                 }
             }
         }
     }
 
-    func updateFeed(url: NSURL, completion: (feed: Feed?) -> Void) {
-        print("+++> AD updateFeed")
+    func updateItalyFeed(url: NSURL, completion: (feed: ItalyFeed?) -> Void) {
+        print("+++> AD updateItalyFeed")
         let request = NSURLRequest(URL: url)
         let task = NSURLSession.sharedSession().dataTaskWithRequest(request) { (data, response, error) -> Void in
             if error == nil && data != nil {
-                let feed = Feed(data: data!, sourceURL: url)
+                let feed = ItalyFeed(data: data!, sourceURL: url)
                 if let goodFeed = feed {
-                    if self.saveFeed(goodFeed) {
+                    if self.saveItalyFeed(goodFeed) {
                         NSUserDefaults.standardUserDefaults().setObject(NSDate(), forKey: "lastUpdate")
                     }
                 }
-                print("+++> AD updateFeed loaded Remote feed!")
+                print("+++> AD updateItalyFeed loaded Remote feed!")
                 NSOperationQueue.mainQueue().addOperationWithBlock({ () -> Void in
                     completion(feed: feed)
                 })
@@ -97,25 +97,25 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         task.resume()
     }
 
-    func feedFilePath() -> String {
-        print("+++> AD feedFilePath")
+    func italyFeedFilePath() -> String {
+        print("+++> AD italyFeedFilePath")
         let paths = NSFileManager.defaultManager().URLsForDirectory(.CachesDirectory, inDomains: .UserDomainMask)
         let filePath = paths[0].URLByAppendingPathComponent("feedFile.plist")
         return filePath!.path!
     }
     
-    func saveFeed(feed: Feed) -> Bool {
-        print("+++> AD saveFeed")
-        let success = NSKeyedArchiver.archiveRootObject(feed, toFile: feedFilePath())
+    func saveItalyFeed(feed: ItalyFeed) -> Bool {
+        print("+++> AD saveItalyFeed")
+        let success = NSKeyedArchiver.archiveRootObject(feed, toFile: italyFeedFilePath())
         assert(success, "failed to write archive")
         return success
     }
     
-    func readFeed(completion: (feed: Feed?) -> Void) {
-        print("+++> AD readFeed")
-        let path = feedFilePath()
+    func readItalyFeed(completion: (feed: ItalyFeed?) -> Void) {
+        print("+++> AD readItalyFeed")
+        let path = italyFeedFilePath()
         let unarchivedObject = NSKeyedUnarchiver.unarchiveObjectWithFile(path)
-        completion(feed: unarchivedObject as? Feed)
+        completion(feed: unarchivedObject as? ItalyFeed)
     }
     
     func applicationWillTerminate(application: UIApplication) {

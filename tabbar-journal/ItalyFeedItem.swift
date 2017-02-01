@@ -1,31 +1,32 @@
 //
-//  FeedItem.swift
+//  ItalyFeedItem.swift
 //  tabbar-journal
 //
-//  Created by Joel Shin on 1/28/17.
+//  Created by Joel Shin on 2/1/17.
 //  Copyright © 2017 Joel Shin. All rights reserved.
 //
 
 import Foundation
 
-class FeedItem: NSObject, NSCoding {
+class ItalyFeedItem :NSObject, NSCoding {
     let title: String
     let imageURL: NSURL
     
     init (title: String, imageURL: NSURL) {
+        // print("+++> FeedItem init")
         self.title = title
         self.imageURL = imageURL
         super.init()
     }
-
+    
     func encodeWithCoder(aCoder: NSCoder) {
-        print("+++> FeedItem encodeWithCoder")
+        // print("+++> FeedItem encodeWithCoder")
         aCoder.encodeObject(self.title, forKey: "itemTitle")
         aCoder.encodeObject(self.imageURL, forKey: "itemURL")
     }
     
     required convenience init?(coder aDecoder: NSCoder) {
-        print("+++> FeedItem required convenience init?")
+        print("+++> ItalyFeedItem required convenience init?")
         let storedTitle = aDecoder.decodeObjectForKey("itemTitle") as? String
         let storedURL = aDecoder.decodeObjectForKey("itemURL") as? NSURL
         
@@ -34,5 +35,4 @@ class FeedItem: NSObject, NSCoding {
         }
         self.init(title: storedTitle!, imageURL: storedURL!)
     }
-
 }
