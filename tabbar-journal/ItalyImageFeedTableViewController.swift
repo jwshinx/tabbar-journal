@@ -12,8 +12,12 @@ import CoreData
 class ItalyImageFeedTableViewController: UITableViewController {
     var feed: ItalyFeed? {
         didSet {
+            print("++++++++++++++++++++++++++++++++++++++++++++++++")
+            print("++++++++++++++++++++++++++++++++++++++++++++++++")
             print("+++> IIFTVC didSet italyFeed")
             print("+++> IIFTVC didSet lets reload data <+++++++++")
+            print("++++++++++++++++++++++++++++++++++++++++++++++++")
+            print("++++++++++++++++++++++++++++++++++++++++++++++++")
             self.tableView.reloadData()
         }
     }
@@ -54,6 +58,32 @@ class ItalyImageFeedTableViewController: UITableViewController {
         print("+++> IIFTVC tableView numberOfRowsInSection")
         return self.feed?.items.count ?? 0
     }
+
+    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        print("+++> IFTVC tableView cellForRowAtIndexPath")
+        let cell = tableView.dequeueReusableCellWithIdentifier("ItalyImageFeedItemTableViewCell", forIndexPath: indexPath) as! ItalyImageFeedItemTableViewCell
+        let item = self.feed!.items[indexPath.row]
+        cell.itemTitle.text = item.title
+        let request = NSURLRequest(URL: item.imageURL)
+        cell.dataTask = self.urlSession.dataTaskWithRequest(request) { (data, response, error) -> Void in
+            NSOperationQueue.mainQueue().addOperationWithBlock({ () -> Void in
+                if error == nil && data != nil {
+                    let image = UIImage(data: data!)
+                    cell.itemImageView.image = image
+                }
+            })
+        }
+        cell.dataTask?.resume()
+        return cell
+    }
+
+    override func tableView(tableView: UITableView, didEndDisplayingCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
+        print("+++> IIFTVC tableView didEndDisplayingCell")
+        if let cell = cell as? ItalyImageFeedItemTableViewCell {
+            cell.dataTask?.cancel()
+        }
+    }
+
     /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)

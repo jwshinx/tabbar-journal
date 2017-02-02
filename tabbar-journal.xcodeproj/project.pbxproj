@@ -28,6 +28,7 @@
 		18827E7C1E41E5FD003F7BE0 /* Tag+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18827E781E41E5FD003F7BE0 /* Tag+CoreDataProperties.swift */; };
 		18827E7E1E41EA08003F7BE0 /* ItalyFeed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18827E7D1E41EA08003F7BE0 /* ItalyFeed.swift */; };
 		18827E801E41EA78003F7BE0 /* ItalyFeedItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18827E7F1E41EA78003F7BE0 /* ItalyFeedItem.swift */; };
+		18827E821E41ECD4003F7BE0 /* ItalyImageFeedItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18827E811E41ECD4003F7BE0 /* ItalyImageFeedItemTableViewCell.swift */; };
 		18D6E72E1E3D07F400BC19EF /* PhotosTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D6E72D1E3D07F400BC19EF /* PhotosTableViewController.swift */; };
 		18D6E7301E3D0BB900BC19EF /* Feed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D6E72F1E3D0BB900BC19EF /* Feed.swift */; };
 		18D6E7321E3D0BE300BC19EF /* FeedItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D6E7311E3D0BE300BC19EF /* FeedItem.swift */; };
@@ -79,6 +80,7 @@
 		18827E781E41E5FD003F7BE0 /* Tag+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Tag+CoreDataProperties.swift"; path = "../Tag+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		18827E7D1E41EA08003F7BE0 /* ItalyFeed.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItalyFeed.swift; sourceTree = "<group>"; };
 		18827E7F1E41EA78003F7BE0 /* ItalyFeedItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItalyFeedItem.swift; sourceTree = "<group>"; };
+		18827E811E41ECD4003F7BE0 /* ItalyImageFeedItemTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItalyImageFeedItemTableViewCell.swift; sourceTree = "<group>"; };
 		18D6E72D1E3D07F400BC19EF /* PhotosTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotosTableViewController.swift; sourceTree = "<group>"; };
 		18D6E72F1E3D0BB900BC19EF /* Feed.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Feed.swift; sourceTree = "<group>"; };
 		18D6E7311E3D0BE300BC19EF /* FeedItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedItem.swift; sourceTree = "<group>"; };
@@ -149,7 +151,6 @@
 				184469F01E357DBB00ACACCB /* Assets.xcassets */,
 				184469F21E357DBB00ACACCB /* LaunchScreen.storyboard */,
 				184469F51E357DBB00ACACCB /* Info.plist */,
-				18827E731E41E2F8003F7BE0 /* ItalyImageFeedTableViewController.swift */,
 			);
 			path = "tabbar-journal";
 			sourceTree = "<group>";
@@ -183,6 +184,8 @@
 				18827E681E41DFEE003F7BE0 /* DataModel.xcdatamodeld */,
 				18827E7D1E41EA08003F7BE0 /* ItalyFeed.swift */,
 				18827E7F1E41EA78003F7BE0 /* ItalyFeedItem.swift */,
+				18827E811E41ECD4003F7BE0 /* ItalyImageFeedItemTableViewCell.swift */,
+				18827E731E41E2F8003F7BE0 /* ItalyImageFeedTableViewController.swift */,
 			);
 			name = italy;
 			sourceTree = "<group>";
@@ -327,6 +330,7 @@
 				18D6E7301E3D0BB900BC19EF /* Feed.swift in Sources */,
 				18446A181E35894300ACACCB /* BandsTableViewController.swift in Sources */,
 				18D6E7341E3D0C6200BC19EF /* PhotosTableViewCell.swift in Sources */,
+				18827E821E41ECD4003F7BE0 /* ItalyImageFeedItemTableViewCell.swift in Sources */,
 				18446A1C1E35E88600ACACCB /* DashboardsTableViewController.swift in Sources */,
 				184469E81E357DBB00ACACCB /* AppDelegate.swift in Sources */,
 				18827E7C1E41E5FD003F7BE0 /* Tag+CoreDataProperties.swift in Sources */,

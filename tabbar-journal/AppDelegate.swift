@@ -48,7 +48,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             self.loadOrUpdateFeed(url, completion: { (feed) -> Void in
                 let navController = application.windows[0].rootViewController as? UINavigationController
                 let viewController = navController?.viewControllers[0] as? ItalyImageFeedTableViewController
+                print("~~~> feed 1 <~~~ <~~~ <~~~ <~~~ <~~~ <~~~ <~~~ <~~~ <~~~ <~~~")
                 viewController?.feed = feed
+                print("~~~> feed 2 <~~~ <~~~ <~~~ <~~~ <~~~ <~~~ <~~~ <~~~ <~~~ <~~~")
             })
         }
     }

@@ -42,5 +42,34 @@ class DataController {
     }
     
     func tagFeedItem(tagTitle: String, feedItem: FeedItem) {
+        print("+++> DCntrlr tagFeedItem")
+        let tagsFetch = NSFetchRequest(entityName: "Tag")
+        tagsFetch.predicate = NSPredicate(format: "title == %@", tagTitle)
+        
+        var fetchedTags: [Tag]!
+        do {
+            fetchedTags = try self.managedObjectContext.executeFetchRequest(tagsFetch) as! [Tag]
+        } catch {
+            fatalError("fetch failed")
+        }
+        
+        var tag: Tag
+        if fetchedTags.count == 0 {
+            tag = NSEntityDescription.insertNewObjectForEntityForName("Tag", inManagedObjectContext: self.managedObjectContext) as! Tag
+            tag.title = tagTitle
+        } else {
+            tag = fetchedTags[0]
+        }
+        
+        let newImage = NSEntityDescription.insertNewObjectForEntityForName("Image", inManagedObjectContext: self.managedObjectContext) as! Image
+        
+        newImage.title = feedItem.title
+        newImage.imageURL = feedItem.imageURL.absoluteString
+        newImage.tag = tag
+        do {
+            try self.managedObjectContext.save()
+        } catch {
+            fatalError("couldn't save context")
+        }
     }
 }
