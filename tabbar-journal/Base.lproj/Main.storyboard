@@ -59,11 +59,45 @@
                             <outlet property="delegate" destination="zLt-dh-qcj" id="oWj-Lo-ohN"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Italy Photos" id="K3o-P6-rcj"/>
+                    <navigationItem key="navigationItem" title="Italy Photos" id="K3o-P6-rcj">
+                        <barButtonItem key="rightBarButtonItem" title="Tags" id="Gxs-v0-e6f">
+                            <connections>
+                                <segue destination="Viu-Ql-oby" kind="show" identifier="showTags" id="PDM-KE-wxS"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Cii-t9-5vf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="8.8000000000000007" y="-712.89355322338838"/>
+        </scene>
+        <!--Table View Controller-->
+        <scene sceneID="cII-BP-n7X">
+            <objects>
+                <tableViewController id="Viu-Ql-oby" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="X0I-mZ-oz1">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="dMo-Oh-zmx">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="dMo-Oh-zmx" id="cHK-t8-kz0">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="Viu-Ql-oby" id="mUc-RQ-Fn3"/>
+                            <outlet property="delegate" destination="Viu-Ql-oby" id="PQz-eF-BvN"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="EJ1-82-rSp" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="738" y="-1083"/>
         </scene>
         <!--Italy Navigation-->
         <scene sceneID="k4o-ch-nFM">
