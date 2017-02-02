@@ -10,6 +10,11 @@ import UIKit
 import CoreData
 
 class ItalyImageFeedTableViewController: UITableViewController {
+    
+    var window: UIWindow?
+    var dataController: DataController!
+    var urlSession: NSURLSession!
+    
     var feed: ItalyFeed? {
         didSet {
             print("++++++++++++++++++++++++++++++++++++++++++++++++")
@@ -22,16 +27,110 @@ class ItalyImageFeedTableViewController: UITableViewController {
         }
     }
     
-    var urlSession: NSURLSession!
-    
     override func viewWillAppear(animated: Bool) {
-        print("+++> IIFTVC viewWillAppear")
+        print("+++> IIFTVC viewWillAppear 1")
         super.viewWillAppear(animated)
-        
+
         let configuration = NSURLSessionConfiguration.defaultSessionConfiguration()
         self.urlSession = NSURLSession(configuration: configuration)
+
+        NSUserDefaults.standardUserDefaults().registerDefaults(["ItalyImageFeedURLString": "https://api.flickr.com/services/feeds/photos_public.gne?tags=italy&format=json&nojsoncallback=1"])
+        
+        self.dataController = DataController()
+        
+        // aaa
+        // func applicationDidBecomeActive(application: UIApplication) {
+        let urlString = NSUserDefaults.standardUserDefaults().stringForKey("ItalyImageFeedURLString")
+        print("+++> AD applicationDidBecomeActive urlString: \(urlString)")
+        guard let foundURLString = urlString else {
+            return
+        }
+        if let url = NSURL(string: foundURLString) {
+            self.loadOrUpdateFeed(url, completion: { (feed) -> Void in
+                // let navController = application.windows[0].rootViewController as? UINavigationController
+                // let viewController = navController?.viewControllers[0] as? ItalyImageFeedTableViewController
+                print("~~~> feed 1 <~~~ <~~~ <~~~ <~~~ <~~~ <~~~ <~~~ <~~~ <~~~ <~~~")
+                // viewController?.feed = feed
+                self.feed = feed
+                print("~~~> feed 2 <~~~ <~~~ <~~~ <~~~ <~~~ <~~~ <~~~ <~~~ <~~~ <~~~")
+            })
+        }
+
+        // bbb
+        
+        
+        print("+++> IIFTVC viewWillAppear 10")
     }
 
+    // ccc
+    func loadOrUpdateFeed(url: NSURL, completion: (feed: ItalyFeed?) -> Void) {
+        print("+++> AD loadOrUpdateFeed")
+        let lastUpdatedSetting = NSUserDefaults.standardUserDefaults().objectForKey("lastUpdate") as? NSDate
+        
+        var shouldUpdate = true
+        if let lastUpdated = lastUpdatedSetting where NSDate().timeIntervalSinceDate(lastUpdated) < 20 {
+            shouldUpdate = false
+        }
+        if shouldUpdate {
+            self.updateItalyFeed(url, completion: completion)
+        } else {
+            self.readItalyFeed { (feed) -> Void in
+                if let foundSavedFeed = feed where foundSavedFeed.sourceURL.absoluteString == url.absoluteString {
+                    print("+++> AD loaded saved feed!")
+                    NSOperationQueue.mainQueue().addOperationWithBlock({ () -> Void in
+                        completion(feed: foundSavedFeed)
+                    })
+                } else {
+                    self.updateItalyFeed(url, completion: completion)
+                }
+            }
+        }
+    }
+    
+    func updateItalyFeed(url: NSURL, completion: (feed: ItalyFeed?) -> Void) {
+        print("+++> AD updateItalyFeed")
+        let request = NSURLRequest(URL: url)
+        let task = NSURLSession.sharedSession().dataTaskWithRequest(request) { (data, response, error) -> Void in
+            if error == nil && data != nil {
+                let feed = ItalyFeed(data: data!, sourceURL: url)
+                if let goodFeed = feed {
+                    if self.saveItalyFeed(goodFeed) {
+                        NSUserDefaults.standardUserDefaults().setObject(NSDate(), forKey: "lastUpdate")
+                    }
+                }
+                print("+++> AD updateItalyFeed loaded Remote feed!")
+                NSOperationQueue.mainQueue().addOperationWithBlock({ () -> Void in
+                    completion(feed: feed)
+                })
+            }
+        }
+        task.resume()
+    }
+    
+    func italyFeedFilePath() -> String {
+        print("+++> AD italyFeedFilePath")
+        let paths = NSFileManager.defaultManager().URLsForDirectory(.CachesDirectory, inDomains: .UserDomainMask)
+        let filePath = paths[0].URLByAppendingPathComponent("feedFile.plist")
+        return filePath!.path!
+    }
+    
+    func saveItalyFeed(feed: ItalyFeed) -> Bool {
+        print("+++> AD saveItalyFeed")
+        let success = NSKeyedArchiver.archiveRootObject(feed, toFile: italyFeedFilePath())
+        assert(success, "failed to write archive")
+        return success
+    }
+    
+    func readItalyFeed(completion: (feed: ItalyFeed?) -> Void) {
+        print("+++> AD readItalyFeed")
+        let path = italyFeedFilePath()
+        let unarchivedObject = NSKeyedUnarchiver.unarchiveObjectWithFile(path)
+        completion(feed: unarchivedObject as? ItalyFeed)
+    }
+
+    // ddd
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
