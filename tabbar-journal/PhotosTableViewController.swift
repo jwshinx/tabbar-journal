@@ -11,8 +11,6 @@ import UIKit
 
 class PhotosTableViewController : UITableViewController {
     
-    // let colors = ["white", "yellow", "black"]
-    
     var feed: Feed? {
         didSet {
             print("ooo> self: \(self)")
