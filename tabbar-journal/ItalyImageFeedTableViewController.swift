@@ -34,26 +34,6 @@ class ItalyImageFeedTableViewController: UITableViewController {
             if initialLoad == true {
                 initialLoad = false
             }
-            /*
-            if(dataController == nil) {
-                print("+++> dataController is not there")
-            } else {
-                print("+++> dataController is there")
-                self.tableView.reloadData()
-            }*/
-            
-            /*
-            if fct == 20 {
-                self.tableView.reloadData()
-            }*/
-            
-            // self.tableView.reloadData()
-            /*if initialLoad == true {
-                print("+++ +++> initial load - reloadData")
-                self.tableView.reloadData()
-            } else {
-                print("+++ +++> filtered load - do not reloadData")
-            }*/
         }
     }
     
@@ -89,14 +69,9 @@ class ItalyImageFeedTableViewController: UITableViewController {
                 print("~~~> feed 2 <~~~ <~~~ <~~~ <~~~ <~~~ <~~~ <~~~ <~~~ <~~~ <~~~")
             })
         }
-
-        // bbb
-        
-        
         print("+++> IIFTVC viewWillAppear 10")
     }
 
-    // ccc
     func loadOrUpdateFeed(url: NSURL, completion: (feed: ItalyFeed?) -> Void) {
         print("+++> AD loadOrUpdateFeed")
         let lastUpdatedSetting = NSUserDefaults.standardUserDefaults().objectForKey("lastUpdate") as? NSDate
@@ -161,9 +136,6 @@ class ItalyImageFeedTableViewController: UITableViewController {
         let unarchivedObject = NSKeyedUnarchiver.unarchiveObjectWithFile(path)
         completion(feed: unarchivedObject as? ItalyFeed)
     }
-
-    // ddd
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()

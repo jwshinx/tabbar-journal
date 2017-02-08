@@ -51,7 +51,6 @@ class TagsTableViewController: UITableViewController {
                 for image in images {
                     let imageURL = NSURL(string: image.imageURL ?? "") ?? NSURL()
                     let newFeedItem = FeedItem(title: image.title ?? "(no title)" , imageURL: imageURL)
-                    // let newFeedItem = FeedItem(title: "joel joel" , imageURL: imageURL)
                     feedItems.append(newFeedItem)
                 }
                 let feed = ItalyFeed(items: feedItems, sourceURL: NSURL())
