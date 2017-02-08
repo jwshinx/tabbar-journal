@@ -22,17 +22,17 @@ class TagsTableViewController: UITableViewController {
     }
     
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        print("+++> TTVC numberOfSectionsInTableView")
+        // print("+++> TTVC numberOfSectionsInTableView")
         return self.fetchedResultsController.sections!.count
     }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        print("+++> TTVC tableView numberOfRowsInSection")
+        // print("+++> TTVC tableView numberOfRowsInSection")
         return self.fetchedResultsController.sections![section].numberOfObjects
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        print("+++> TTVC tableView cellForRowAtIndexPath")
+        // print("+++> TTVC tableView cellForRowAtIndexPath")
         let cell = tableView.dequeueReusableCellWithIdentifier("tagCell", forIndexPath: indexPath)
         let tag = self.fetchedResultsController.objectAtIndexPath(indexPath) as! Tag
         cell.textLabel?.text = tag.title
@@ -50,7 +50,8 @@ class TagsTableViewController: UITableViewController {
                 var feedItems = [FeedItem]()
                 for image in images {
                     let imageURL = NSURL(string: image.imageURL ?? "") ?? NSURL()
-                    let newFeedItem = FeedItem(title: image.title ?? "(no title)" , imageURL: imageURL)
+                    // let newFeedItem = FeedItem(title: image.title ?? "(no title)" , imageURL: imageURL)
+                    let newFeedItem = FeedItem(title: "joel joel" , imageURL: imageURL)
                     feedItems.append(newFeedItem)
                 }
                 let feed = ItalyFeed(items: feedItems, sourceURL: NSURL())

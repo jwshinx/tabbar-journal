@@ -19,13 +19,13 @@ class FeedItem: NSObject, NSCoding {
     }
 
     func encodeWithCoder(aCoder: NSCoder) {
-        print("+++> FeedItem encodeWithCoder")
+        // print("+++> FeedItem encodeWithCoder")
         aCoder.encodeObject(self.title, forKey: "itemTitle")
         aCoder.encodeObject(self.imageURL, forKey: "itemURL")
     }
     
     required convenience init?(coder aDecoder: NSCoder) {
-        print("+++> FeedItem required convenience init?")
+        // print("+++> FeedItem required convenience init?")
         let storedTitle = aDecoder.decodeObjectForKey("itemTitle") as? String
         let storedURL = aDecoder.decodeObjectForKey("itemURL") as? NSURL
         

@@ -16,13 +16,13 @@ class ItalyImageFeedItemTableViewCell: UITableViewCell {
     weak var dataTask: NSURLSessionDataTask?
     
     override func awakeFromNib() {
-        print("+++> IIFITVCell awakeFromNib")
+        // print("+++> IIFITVCell awakeFromNib")
         super.awakeFromNib()
         // Initialization code
     }
     
     override func setSelected(selected: Bool, animated: Bool) {
-        print("+++> IIFITVCell setSelected")
+        // print("+++> IIFITVCell setSelected")
         super.setSelected(selected, animated: animated)
         // Configure the view for the selected state
     }

@@ -14,6 +14,7 @@ class ItalyImageFeedTableViewController: UITableViewController {
     var window: UIWindow?
     var dataController: DataController!
     var urlSession: NSURLSession!
+    var initialLoad: Bool = true
     
     var feed: ItalyFeed? {
         didSet {
@@ -21,9 +22,38 @@ class ItalyImageFeedTableViewController: UITableViewController {
             print("++++++++++++++++++++++++++++++++++++++++++++++++")
             print("+++> IIFTVC didSet italyFeed")
             print("+++> IIFTVC didSet lets reload data <+++++++++")
+            
+            guard let fct = feed?.items.count else {
+                return
+            }
+            print("+++> feed: \(fct)")
             print("++++++++++++++++++++++++++++++++++++++++++++++++")
             print("++++++++++++++++++++++++++++++++++++++++++++++++")
+            
             self.tableView.reloadData()
+            if initialLoad == true {
+                initialLoad = false
+            }
+            /*
+            if(dataController == nil) {
+                print("+++> dataController is not there")
+            } else {
+                print("+++> dataController is there")
+                self.tableView.reloadData()
+            }*/
+            
+            /*
+            if fct == 20 {
+                self.tableView.reloadData()
+            }*/
+            
+            // self.tableView.reloadData()
+            /*if initialLoad == true {
+                print("+++ +++> initial load - reloadData")
+                self.tableView.reloadData()
+            } else {
+                print("+++ +++> filtered load - do not reloadData")
+            }*/
         }
     }
     
@@ -51,7 +81,11 @@ class ItalyImageFeedTableViewController: UITableViewController {
                 // let viewController = navController?.viewControllers[0] as? ItalyImageFeedTableViewController
                 print("~~~> feed 1 <~~~ <~~~ <~~~ <~~~ <~~~ <~~~ <~~~ <~~~ <~~~ <~~~")
                 // viewController?.feed = feed
-                self.feed = feed
+                // self.feed = feed
+                print("~~~> initialLoad: \(self.initialLoad)")
+                if self.initialLoad == true {
+                    self.feed = feed
+                }
                 print("~~~> feed 2 <~~~ <~~~ <~~~ <~~~ <~~~ <~~~ <~~~ <~~~ <~~~ <~~~")
             })
         }
@@ -133,7 +167,7 @@ class ItalyImageFeedTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        // print("xxx> viewDidLoad <xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx")
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -149,17 +183,17 @@ class ItalyImageFeedTableViewController: UITableViewController {
     // MARK: - Table view data source
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        print("+++> IIFTVC numberOfSectionsInTableView")
+        // print("+++> IIFTVC numberOfSectionsInTableView")
         return 1
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        print("+++> IIFTVC tableView numberOfRowsInSection")
+        // print("+++> IIFTVC tableView numberOfRowsInSection")
         return self.feed?.items.count ?? 0
     }
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        print("+++> IFTVC tableView cellForRowAtIndexPath")
+        // print("+++> IFTVC tableView cellForRowAtIndexPath")
         let cell = tableView.dequeueReusableCellWithIdentifier("ItalyImageFeedItemTableViewCell", forIndexPath: indexPath) as! ItalyImageFeedItemTableViewCell
         let item = self.feed!.items[indexPath.row]
         cell.itemTitle.text = item.title
@@ -177,14 +211,14 @@ class ItalyImageFeedTableViewController: UITableViewController {
     }
 
     override func tableView(tableView: UITableView, didEndDisplayingCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
-        print("+++> IIFTVC tableView didEndDisplayingCell")
+        // print("+++> IIFTVC tableView didEndDisplayingCell")
         if let cell = cell as? ItalyImageFeedItemTableViewCell {
             cell.dataTask?.cancel()
         }
     }
 
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        print("+++> IIFTVC tableView didSelectRowAtIndexPath")
+        // print("+++> IIFTVC tableView didSelectRowAtIndexPath")
         let item = self.feed!.items[indexPath.row]
         let alertController = UIAlertController(title: "Add Tag", message: "Type your tag", preferredStyle: .Alert)
         let defaultAction = UIAlertAction(title: "OK", style: .Default) { (action) -> Void in
