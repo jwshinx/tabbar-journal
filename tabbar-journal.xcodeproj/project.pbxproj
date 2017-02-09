@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		182661301E4C5737006A043A /* Band.m in Sources */ = {isa = PBXBuildFile; fileRef = 1826612F1E4C5737006A043A /* Band.m */; };
 		184469E81E357DBB00ACACCB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 184469E71E357DBB00ACACCB /* AppDelegate.swift */; };
 		184469EA1E357DBB00ACACCB /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 184469E91E357DBB00ACACCB /* FirstViewController.swift */; };
 		184469EC1E357DBB00ACACCB /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 184469EB1E357DBB00ACACCB /* SecondViewController.swift */; };
@@ -54,6 +55,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1826612D1E4C5737006A043A /* tabbar-journal-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "tabbar-journal-Bridging-Header.h"; sourceTree = "<group>"; };
+		1826612E1E4C5737006A043A /* Band.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Band.h; path = ../Band.h; sourceTree = "<group>"; };
+		1826612F1E4C5737006A043A /* Band.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Band.m; path = ../Band.m; sourceTree = "<group>"; };
 		184469E41E357DBB00ACACCB /* tabbar-journal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "tabbar-journal.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		184469E71E357DBB00ACACCB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		184469E91E357DBB00ACACCB /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
@@ -121,6 +125,7 @@
 				184469FD1E357DBB00ACACCB /* tabbar-journalTests */,
 				18446A081E357DBB00ACACCB /* tabbar-journalUITests */,
 				184469E51E357DBB00ACACCB /* Products */,
+				1826612D1E4C5737006A043A /* tabbar-journal-Bridging-Header.h */,
 			);
 			sourceTree = "<group>";
 		};
@@ -137,6 +142,8 @@
 		184469E61E357DBB00ACACCB /* tabbar-journal */ = {
 			isa = PBXGroup;
 			children = (
+				1826612E1E4C5737006A043A /* Band.h */,
+				1826612F1E4C5737006A043A /* Band.m */,
 				18827E651E41DE2D003F7BE0 /* italy */,
 				184469E71E357DBB00ACACCB /* AppDelegate.swift */,
 				184469E91E357DBB00ACACCB /* FirstViewController.swift */,
@@ -261,6 +268,7 @@
 				TargetAttributes = {
 					184469E31E357DBB00ACACCB = {
 						CreatedOnToolsVersion = 8.2.1;
+						LastSwiftMigration = 0820;
 						ProvisioningStyle = Automatic;
 					};
 					184469F91E357DBB00ACACCB = {
@@ -335,6 +343,7 @@
 				18446A181E35894300ACACCB /* BandsTableViewController.swift in Sources */,
 				18D6E7341E3D0C6200BC19EF /* PhotosTableViewCell.swift in Sources */,
 				18827E821E41ECD4003F7BE0 /* ItalyImageFeedItemTableViewCell.swift in Sources */,
+				182661301E4C5737006A043A /* Band.m in Sources */,
 				18446A1C1E35E88600ACACCB /* DashboardsTableViewController.swift in Sources */,
 				184469E81E357DBB00ACACCB /* AppDelegate.swift in Sources */,
 				18827E7C1E41E5FD003F7BE0 /* Tag+CoreDataProperties.swift in Sources */,
@@ -498,10 +507,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = "tabbar-journal/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.joelshin.tabbar-journal";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "tabbar-journal-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 2.3;
 			};
 			name = Debug;
@@ -510,10 +522,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = "tabbar-journal/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.joelshin.tabbar-journal";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "tabbar-journal-Bridging-Header.h";
 				SWIFT_VERSION = 2.3;
 			};
 			name = Release;
