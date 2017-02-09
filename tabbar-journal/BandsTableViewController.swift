@@ -14,11 +14,12 @@ class BandsTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        let radiohead = Band()
+        let radiohead: Band = Band()
         radiohead.birthdate = NSDate()
         radiohead.hometown = "London"
         radiohead.name = "Radiohead"
         print("+++> BTVC band: \(radiohead.description())")
+        
         print("+++> BTVC viewDidLoad")
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
