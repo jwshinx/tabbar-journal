@@ -13,14 +13,21 @@ class BandsTableViewController: UITableViewController {
     var bands:[String] = ["Radiohead", "Nirvana", "Beatles", "Air"]
 
     override func viewDidLoad() {
+        print("+++> BTVC viewDidLoad")
         super.viewDidLoad()
+        print("+++> 1 <++++++++++++++++++++++++++++++")
         let radiohead: Band = Band()
         radiohead.birthdate = NSDate()
         radiohead.hometown = "London"
         radiohead.name = "Radiohead"
-        print("+++> BTVC band: \(radiohead.description())")
+        print("\(radiohead.description)")
+
+        print("+++> 2 <++++++++++++++++++++++++++++++")
+        let beatles: Band = Band()
+        print("\(beatles.description)")
         
-        print("+++> BTVC viewDidLoad")
+        print("+++> 3 <++++++++++++++++++++++++++++++")
+        let aaa = Band.init()
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
