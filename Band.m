@@ -13,18 +13,42 @@
 {
     self = [super init];
     if (self) {
-        NSLog(@"xxx> Band init <xxx");
-        NSLog(@"xxx> Band init <xxx");
-        NSLog(@"xxx> Band init <xxx");
     }
     return self;
 }
-// - (instancetype)initWithName:(NSString *) nameValue AndHometown: (NSString *) hometownValue
-// -(void)init:(NSString*)WithName :(NSString*)AndHometown;
-// -(void)init:(NSString *)message withTitle:(NSString *)title;
+
+- (instancetype)initWithName:(NSString*)name
+{
+    self = [super init];
+    if (self) {
+        _name = name;
+    }
+    return self;
+}
+
+- (instancetype)initWithNameAndHomeTown:(NSString *)name homeTown:(NSString *)homeTown;
+{
+    self = [super init];
+    if (self) {
+        _name = name;
+        _hometown = homeTown;
+    }
+    return self;
+}
+
+- (instancetype)initWithNameAndHomeTownAndBirthDate:(NSString *)name homeTown:(NSString *)homeTown birthDate:(NSDate *)birthDate
+{
+    self = [super init];
+    if (self) {
+        _name = name;
+        _hometown = homeTown;
+        _birthdate = birthDate;
+    }
+    return self;
+}
+
 -(void)init:(NSString*) nameValue withHometown:(NSString*) hometownValue
 {
-    NSLog(@"ooo> Band initWithName <ooo");
     _name = nameValue;
     _hometown = hometownValue;
     // _birthdate = NSDate();
@@ -34,8 +58,6 @@
 + (void)initialize
 {
     if (self == [Band class]) {
-        NSLog(@"xxx> Band initialize <xxx");
-        NSLog(@"xxx> Band initialize <xxx");
         NSLog(@"xxx> Band initialize <xxx");
     }
 }

@@ -15,11 +15,16 @@
 @property NSString* hometown;
 
 -(NSString*) description;
-- (instancetype)initWithName:(NSString *)aFoo;
-// - (instancetype)initWithNameAndHometown:(NSString *) aaa;
 
-// - (void)first:(NSString *)fname second:(NSString *)mname third:(NSString *)lname;
-// -(void)init:(NSString*)WithName :(NSString*)AndHometown;
 -(void)init:(NSString*) nameValue withHometown:(NSString*) hometownValue;
+
+-(instancetype)initWithName:(NSString*)name;
+
+-(instancetype)initWithNameAndHomeTown:(NSString *)name
+                               homeTown:(NSString *)homeTown;
+
+-(instancetype)initWithNameAndHomeTownAndBirthDate:(NSString *)name
+                                           homeTown:(NSString *)homeTown
+                                          birthDate:(NSDate *) birthDate;
 
 @end

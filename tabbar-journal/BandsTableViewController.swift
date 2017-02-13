@@ -27,7 +27,18 @@ class BandsTableViewController: UITableViewController {
         print("\(beatles.description)")
         
         print("+++> 3 <++++++++++++++++++++++++++++++")
-        let aaa = Band.init()
+        let arcadeFire: Band = Band(name: "Arcade Fire")
+        print("\(arcadeFire.description)")
+
+        print("+++> 4 <++++++++++++++++++++++++++++++")
+        let stoneRoses: Band = Band(nameAndHomeTown: "Stone Roses", homeTown: "Manchester");
+        print("\(stoneRoses.description)");
+
+        print("+++> 5 <++++++++++++++++++++++++++++++")
+        let rem: Band = Band(nameAndHomeTownAndBirthDate: "REM", homeTown: "Athens", birthDate: NSDate());
+        print("\(rem.description)");
+
+        
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
