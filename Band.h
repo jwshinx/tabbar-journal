@@ -7,12 +7,16 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "Album.h"
 
 @interface Band : NSObject
 
 @property NSString* name;
 @property NSDate* birthdate;
 @property NSString* hometown;
+@property NSMutableArray* discography;
+
+- (void) addAlbum:(Album*)album;
 
 -(NSString*) description;
 

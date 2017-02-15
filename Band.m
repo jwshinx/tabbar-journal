@@ -17,6 +17,12 @@
     return self;
 }
 
+- (void)addAlbum:(Album*)album
+{
+    // _discography = [NSMutableArray arrayWithObjects: @"Album1", @"Album2", album.title, nil];
+    [_discography addObject:album];
+}
+
 - (instancetype)initWithName:(NSString*)name
 {
     self = [super init];
@@ -26,12 +32,13 @@
     return self;
 }
 
-- (instancetype)initWithNameAndHomeTown:(NSString *)name homeTown:(NSString *)homeTown;
+- (instancetype)initWithNameAndHomeTown:(NSString *)name homeTown:(NSString *)homeTown
 {
     self = [super init];
     if (self) {
         _name = name;
         _hometown = homeTown;
+        _discography = [[NSMutableArray alloc] init];
     }
     return self;
 }
@@ -43,6 +50,8 @@
         _name = name;
         _hometown = homeTown;
         _birthdate = birthDate;
+        // _discography = [];
+        _discography = [[NSMutableArray alloc] init];
     }
     return self;
 }
@@ -51,8 +60,7 @@
 {
     _name = nameValue;
     _hometown = hometownValue;
-    // _birthdate = NSDate();
-    // return self;
+    _discography = [[NSMutableArray alloc] init];
 }
 
 + (void)initialize

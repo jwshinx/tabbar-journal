@@ -26,15 +26,30 @@ class BandsTableViewController: UITableViewController {
         let arcadeFire: Band = Band(name: "Arcade Fire")
         let stoneRoses: Band = Band(nameAndHomeTown: "Stone Roses", homeTown: "Manchester");
         let rem: Band = Band(nameAndHomeTownAndBirthDate: "REM", homeTown: "Athens", birthDate: NSDate());
-        
+
         artists.append(rem)
         artists.append(radiohead)
         artists.append(beatles)
         artists.append(arcadeFire)
         artists.append(stoneRoses)
         
+        let green: Album = Album(titleAndYear: "Green", year: 1988)
+        green.revenue = 75
+
+        let document: Album = Album(titleAndYear: "Document", year: 1985)
+        green.revenue = 8
+
+        rem.addAlbum(green)
+        rem.addAlbum(document)
+
         for artist in artists {
-            print("++++++> \(artist.description)")
+            print("------> \(artist.description)")
+            guard let albums = artist.discography else {
+                continue
+            }
+            for album in albums {
+                print("------>     ***> \(album)")
+            }
         }
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -73,20 +88,20 @@ class BandsTableViewController: UITableViewController {
         let dest = segue.destinationViewController as! AlbumsTableViewController
         if segue.identifier == "albumsSegue" {
             print("+++> prepareForSegue albumsSegue")
-            dest.selectedBand = "my selected band"
+            dest.selectedBand = Band()
             
             
             let selectedRow = tableView.indexPathForSelectedRow?.row
             if let dest = segue.destinationViewController as? AlbumsTableViewController {
                 print("+++>    AlbumsViewController yes!")
-                dest.selectedBand = artists[selectedRow!].name
+                dest.selectedBand = artists[selectedRow!]
                 dest.title = artists[selectedRow!].name
             } else {
                 print("+++>    AlbumsViewController no!")
             }
         } else {
             print("+++> prepareForSegue not albumsSegue")
-            dest.selectedBand = "n/a"
+            dest.selectedBand = Band()
         }
     }
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {

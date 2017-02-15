@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		182661301E4C5737006A043A /* Band.m in Sources */ = {isa = PBXBuildFile; fileRef = 1826612F1E4C5737006A043A /* Band.m */; };
+		182661331E5436D3006A043A /* Album.m in Sources */ = {isa = PBXBuildFile; fileRef = 182661321E5436D3006A043A /* Album.m */; };
 		184469E81E357DBB00ACACCB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 184469E71E357DBB00ACACCB /* AppDelegate.swift */; };
 		184469EA1E357DBB00ACACCB /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 184469E91E357DBB00ACACCB /* FirstViewController.swift */; };
 		184469EC1E357DBB00ACACCB /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 184469EB1E357DBB00ACACCB /* SecondViewController.swift */; };
@@ -58,6 +59,8 @@
 		1826612D1E4C5737006A043A /* tabbar-journal-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "tabbar-journal-Bridging-Header.h"; sourceTree = "<group>"; };
 		1826612E1E4C5737006A043A /* Band.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Band.h; path = ../Band.h; sourceTree = "<group>"; };
 		1826612F1E4C5737006A043A /* Band.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Band.m; path = ../Band.m; sourceTree = "<group>"; };
+		182661311E5436D3006A043A /* Album.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Album.h; sourceTree = "<group>"; };
+		182661321E5436D3006A043A /* Album.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Album.m; sourceTree = "<group>"; };
 		184469E41E357DBB00ACACCB /* tabbar-journal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "tabbar-journal.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		184469E71E357DBB00ACACCB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		184469E91E357DBB00ACACCB /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
@@ -118,6 +121,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		182661341E5436DE006A043A /* music */ = {
+			isa = PBXGroup;
+			children = (
+				182661311E5436D3006A043A /* Album.h */,
+				182661321E5436D3006A043A /* Album.m */,
+				1826612E1E4C5737006A043A /* Band.h */,
+				1826612F1E4C5737006A043A /* Band.m */,
+			);
+			name = music;
+			sourceTree = "<group>";
+		};
 		184469DB1E357DBA00ACACCB = {
 			isa = PBXGroup;
 			children = (
@@ -142,8 +156,7 @@
 		184469E61E357DBB00ACACCB /* tabbar-journal */ = {
 			isa = PBXGroup;
 			children = (
-				1826612E1E4C5737006A043A /* Band.h */,
-				1826612F1E4C5737006A043A /* Band.m */,
+				182661341E5436DE006A043A /* music */,
 				18827E651E41DE2D003F7BE0 /* italy */,
 				184469E71E357DBB00ACACCB /* AppDelegate.swift */,
 				184469E91E357DBB00ACACCB /* FirstViewController.swift */,
@@ -338,6 +351,7 @@
 				184469EC1E357DBB00ACACCB /* SecondViewController.swift in Sources */,
 				18827E7B1E41E5FD003F7BE0 /* Tag+CoreDataClass.swift in Sources */,
 				189971E21E432BB200949461 /* TagsTableViewController.swift in Sources */,
+				182661331E5436D3006A043A /* Album.m in Sources */,
 				18827E671E41DE41003F7BE0 /* DataController.swift in Sources */,
 				18D6E7301E3D0BB900BC19EF /* Feed.swift in Sources */,
 				18446A181E35894300ACACCB /* BandsTableViewController.swift in Sources */,

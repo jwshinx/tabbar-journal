@@ -10,7 +10,7 @@ import UIKit
 
 class AlbumsTableViewController: UITableViewController {
     
-    var selectedBand:String?
+    var selectedBand:Band?
     
     var albums:[String: [String]] = [
         "Radiohead": ["The Bends", "OK Computer", "Amnesiac"],
@@ -22,6 +22,11 @@ class AlbumsTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         print("+++> ATVC viewDidLoad selectedBand: \(selectedBand!)")
+        
+        let joshuaTree: Album = Album(titleAndYear: "Joshua Tree", year: 1985)
+        joshuaTree.revenue = 112
+        print("+++ +++> album: \(joshuaTree)")
+        sayHello()
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -46,20 +51,23 @@ class AlbumsTableViewController: UITableViewController {
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        guard albums[selectedBand!] != nil else {
+        guard albums[selectedBand!.name] != nil else {
             return 0
         }
-        return albums[selectedBand!]!.count
+        return albums[selectedBand!.name]!.count
     }
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         print("+++> ATVC cellForRowAt \(selectedBand!)")
         let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath)
-        cell.textLabel?.text = albums[selectedBand!]![indexPath.row]
+        cell.textLabel?.text = albums[selectedBand!.name]![indexPath.row]
         // cell.itemImageView.image = image
         return cell
     }
 
+    func sayHello() {
+        print("xxx xxx> hello ")
+    }
     /*
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
