@@ -11,6 +11,7 @@ import UIKit
 class BandsTableViewController: UITableViewController {
     
     var bands:[String] = ["Radiohead", "Nirvana", "Beatles", "Air"]
+    var artists:[Band] = []
 
     override func viewDidLoad() {
         print("+++> BTVC viewDidLoad")
@@ -23,7 +24,7 @@ class BandsTableViewController: UITableViewController {
         print("\(radiohead.description)")
 
         print("+++> 2 <++++++++++++++++++++++++++++++")
-        let beatles: Band = Band()
+        let beatles: Band = Band(nameAndHomeTownAndBirthDate: "Beatles", homeTown: "Liverpool", birthDate: NSDate());
         print("\(beatles.description)")
         
         print("+++> 3 <++++++++++++++++++++++++++++++")
@@ -37,6 +38,13 @@ class BandsTableViewController: UITableViewController {
         print("+++> 5 <++++++++++++++++++++++++++++++")
         let rem: Band = Band(nameAndHomeTownAndBirthDate: "REM", homeTown: "Athens", birthDate: NSDate());
         print("\(rem.description)");
+        
+        artists.append(rem)
+        artists.append(radiohead)
+        artists.append(beatles)
+        artists.append(arcadeFire)
+        artists.append(stoneRoses)
+        print("+++> artists: \(artists.description)")
 
         
         // Uncomment the following line to preserve selection between presentations
@@ -62,13 +70,13 @@ class BandsTableViewController: UITableViewController {
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
         print("+++> BTVC numberOfRowsInSection")
-        return bands.count
+        return artists.count
     }
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         print("+++> BTVC cellForRowAt")
         let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath)
-        cell.textLabel?.text = bands[indexPath.row]
+        cell.textLabel?.text = artists[indexPath.row].name
         return cell
     }
 
@@ -82,8 +90,8 @@ class BandsTableViewController: UITableViewController {
             let selectedRow = tableView.indexPathForSelectedRow?.row
             if let dest = segue.destinationViewController as? AlbumsTableViewController {
                 print("+++>    AlbumsViewController yes!")
-                dest.selectedBand = bands[selectedRow!]
-                dest.title = bands[selectedRow!]
+                dest.selectedBand = artists[selectedRow!].name
+                dest.title = artists[selectedRow!].name
             } else {
                 print("+++>    AlbumsViewController no!")
             }

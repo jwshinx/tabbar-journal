@@ -46,6 +46,9 @@ class AlbumsTableViewController: UITableViewController {
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
+        guard albums[selectedBand!] != nil else {
+            return 0
+        }
         return albums[selectedBand!]!.count
     }
 
