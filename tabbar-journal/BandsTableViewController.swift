@@ -21,32 +21,21 @@ class BandsTableViewController: UITableViewController {
         radiohead.birthdate = NSDate()
         radiohead.hometown = "London"
         radiohead.name = "Radiohead"
-        print("\(radiohead.description)")
 
-        print("+++> 2 <++++++++++++++++++++++++++++++")
         let beatles: Band = Band(nameAndHomeTownAndBirthDate: "Beatles", homeTown: "Liverpool", birthDate: NSDate());
-        print("\(beatles.description)")
-        
-        print("+++> 3 <++++++++++++++++++++++++++++++")
         let arcadeFire: Band = Band(name: "Arcade Fire")
-        print("\(arcadeFire.description)")
-
-        print("+++> 4 <++++++++++++++++++++++++++++++")
         let stoneRoses: Band = Band(nameAndHomeTown: "Stone Roses", homeTown: "Manchester");
-        print("\(stoneRoses.description)");
-
-        print("+++> 5 <++++++++++++++++++++++++++++++")
         let rem: Band = Band(nameAndHomeTownAndBirthDate: "REM", homeTown: "Athens", birthDate: NSDate());
-        print("\(rem.description)");
         
         artists.append(rem)
         artists.append(radiohead)
         artists.append(beatles)
         artists.append(arcadeFire)
         artists.append(stoneRoses)
-        print("+++> artists: \(artists.description)")
-
         
+        for artist in artists {
+            print("++++++> \(artist.description)")
+        }
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 

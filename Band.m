@@ -74,7 +74,7 @@
 
 -(NSString *)description
 {
-    NSString* newString = [NSString stringWithFormat:@"\n\nBand: %@ \nHometown: %@ \nBirthdate: %@ \n\n",
+    NSString* newString = [NSString stringWithFormat:@"%@ - %@ - %@",
                            _name, _hometown, _birthdate];
     return newString;
 }
