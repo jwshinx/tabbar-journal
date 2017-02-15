@@ -23,10 +23,6 @@ class AlbumsTableViewController: UITableViewController {
         super.viewDidLoad()
         print("+++> ATVC viewDidLoad selectedBand: \(selectedBand!)")
         
-        let joshuaTree: Album = Album(titleAndYear: "Joshua Tree", year: 1985)
-        joshuaTree.revenue = 112
-        print("+++ +++> album: \(joshuaTree)")
-        sayHello()
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -65,9 +61,6 @@ class AlbumsTableViewController: UITableViewController {
         return cell
     }
 
-    func sayHello() {
-        print("xxx xxx> hello ")
-    }
     /*
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {

@@ -32,16 +32,36 @@ class BandsTableViewController: UITableViewController {
         artists.append(beatles)
         artists.append(arcadeFire)
         artists.append(stoneRoses)
+        populateDiscography(rem)
         
+        /*
+        let joshuaTree: Album = Album(titleAndYear: "Joshua Tree", year: 1985)
+        joshuaTree.revenue = 112
+        print("+++ +++> album: \(joshuaTree)")
+        */
+
+        // Uncomment the following line to preserve selection between presentations
+        // self.clearsSelectionOnViewWillAppear = false
+
+        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
+        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+    }
+
+    // JWS todo: make this more flexible. pass band and albums. make it handle all bands
+    // JWS todo: make this more flexible. pass band and albums. make it handle all bands
+    // JWS todo: make this more flexible. pass band and albums. make it handle all bands
+    // JWS todo: make this more flexible. pass band and albums. make it handle all bands
+    // JWS todo: make this more flexible. pass band and albums. make it handle all bands
+    func populateDiscography(rem: Band) {
         let green: Album = Album(titleAndYear: "Green", year: 1988)
         green.revenue = 75
-
+        
         let document: Album = Album(titleAndYear: "Document", year: 1985)
         green.revenue = 8
-
+        
         rem.addAlbum(green)
         rem.addAlbum(document)
-
+        
         for artist in artists {
             print("------> \(artist.description)")
             guard let albums = artist.discography else {
@@ -51,11 +71,6 @@ class BandsTableViewController: UITableViewController {
                 print("------>     ***> \(album)")
             }
         }
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
 
     override func didReceiveMemoryWarning() {
