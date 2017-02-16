@@ -17,4 +17,8 @@
 -(instancetype)initWithTitleAndYear:(NSString *)title
                                year:(int)year;
 
+-(instancetype)initWithTitleAndYearAndRevenue:(NSString *)title
+                                         year:(int)year
+                                      revenue:(int) revenue;
+
 @end

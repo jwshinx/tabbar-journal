@@ -17,11 +17,8 @@ class BandsTableViewController: UITableViewController {
         print("+++> BTVC viewDidLoad")
         super.viewDidLoad()
         print("+++> 1 <++++++++++++++++++++++++++++++")
-        let radiohead: Band = Band()
-        radiohead.birthdate = NSDate()
-        radiohead.hometown = "London"
-        radiohead.name = "Radiohead"
 
+        let radiohead: Band = Band(nameAndHomeTownAndBirthDate: "Radiohead", homeTown: "Leeds", birthDate: NSDate());
         let beatles: Band = Band(nameAndHomeTownAndBirthDate: "Beatles", homeTown: "Liverpool", birthDate: NSDate());
         let arcadeFire: Band = Band(name: "Arcade Fire")
         let stoneRoses: Band = Band(nameAndHomeTown: "Stone Roses", homeTown: "Manchester");
@@ -32,6 +29,16 @@ class BandsTableViewController: UITableViewController {
         artists.append(beatles)
         artists.append(arcadeFire)
         artists.append(stoneRoses)
+        
+        let theBends: Album = Album(titleAndYearAndRevenue: "The Bends", year: 1995, revenue: 11)
+        let okComputer: Album = Album(titleAndYearAndRevenue: "Ok Computer", year: 1997, revenue: 204)
+        let amnesiac: Album = Album(titleAndYearAndRevenue: "Amnesiac", year: 2003, revenue: 224)
+        let inRainbows: Album = Album(titleAndYearAndRevenue: "In Rainbows", year: 2005, revenue: 91)
+        radiohead.addAlbum(theBends)
+        radiohead.addAlbum(okComputer)
+        radiohead.addAlbum(amnesiac)
+        radiohead.addAlbum(inRainbows)
+
         populateDiscography(rem)
         
         /*
@@ -47,17 +54,9 @@ class BandsTableViewController: UITableViewController {
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
 
-    // JWS todo: make this more flexible. pass band and albums. make it handle all bands
-    // JWS todo: make this more flexible. pass band and albums. make it handle all bands
-    // JWS todo: make this more flexible. pass band and albums. make it handle all bands
-    // JWS todo: make this more flexible. pass band and albums. make it handle all bands
-    // JWS todo: make this more flexible. pass band and albums. make it handle all bands
     func populateDiscography(rem: Band) {
-        let green: Album = Album(titleAndYear: "Green", year: 1988)
-        green.revenue = 75
-        
-        let document: Album = Album(titleAndYear: "Document", year: 1985)
-        green.revenue = 8
+        let green: Album = Album(titleAndYearAndRevenue: "Green", year: 1988, revenue: 75)
+        let document: Album = Album(titleAndYearAndRevenue: "Document", year: 1985, revenue: 8)
         
         rem.addAlbum(green)
         rem.addAlbum(document)

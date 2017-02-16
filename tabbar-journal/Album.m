@@ -21,6 +21,19 @@
     return self;
 }
 
+-(instancetype)initWithTitleAndYearAndRevenue:(NSString *)title
+                                         year:(int)year
+                                      revenue:(int) revenue
+{
+    self = [super init];
+    if (self) {
+        _title = title;
+        _year = year;
+        _revenue = revenue;
+    }
+    return self;
+}
+
 -(NSString *)description
 {
     NSString* newString = [NSString stringWithFormat:@"%@ - %i - %i",
