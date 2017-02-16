@@ -12,12 +12,12 @@ class AlbumsTableViewController: UITableViewController {
     
     var selectedBand:Band?
     
-    var albums:[String: [String]] = [
+    /*var albums:[String: [String]] = [
         "Radiohead": ["The Bends", "OK Computer", "Amnesiac"],
         "Nirvana"  : ["In Utero", "Bleach"],
         "Beatles"  : ["White", "Yellow Submarine", "Rubber Maid", "Abbey Row", "Srgt Peppers"],
-        "Air"      : ["Merci", "La Boulange"]
-    ]
+        "REM"      : []
+    ]*/
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,16 +47,28 @@ class AlbumsTableViewController: UITableViewController {
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        guard albums[selectedBand!.name] != nil else {
+        // guard albums[selectedBand!.name] != nil else {
+        //     return 0
+        // }
+        // return albums[selectedBand!.name]!.count
+        if selectedBand?.discography == nil {
             return 0
+        } else {
+            return (selectedBand?.discography)!.count
         }
-        return albums[selectedBand!.name]!.count
     }
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         print("+++> ATVC cellForRowAt \(selectedBand!)")
         let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath)
-        cell.textLabel?.text = albums[selectedBand!.name]![indexPath.row]
+        // cell.textLabel?.text = albums[selectedBand!.name]![indexPath.row]
+        cell.textLabel?.text = (selectedBand?.discography)![indexPath.row].title
+        if selectedBand?.discography != nil {
+            for album in (selectedBand?.discography)! {
+                print("---> album: \(album.description)");
+            }
+        }
+        // cell.textLabel?.text = selectedBand!.discography[indexPath.row]
         // cell.itemImageView.image = image
         return cell
     }
