@@ -7,6 +7,7 @@
 //
 
 #import "Album.h"
+#import "Album_PrivateProperties.h"
 
 @implementation Album
 
@@ -34,10 +35,17 @@
     return self;
 }
 
+// not in header file. private method.
+-(NSString *)greeting
+{
+    return @"Hello";
+}
+
 -(NSString *)description
 {
-    NSString* newString = [NSString stringWithFormat:@"%@ (%i) $%iM",
-                           _title, _year, _revenue];
+    NSString* hello = self.greeting;
+    NSString* newString = [NSString stringWithFormat:@"%@, %@ (%i) $%iM",
+                            self.greeting, _title, _year, _revenue];
     return newString;
     
 }

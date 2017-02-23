@@ -11,8 +11,8 @@
 @interface Album : NSObject
 
 @property NSString* title;
-@property int revenue;
 @property int year;
+@property (readonly) int revenue;
 
 -(instancetype)initWithTitleAndYear:(NSString *)title
                                year:(int)year;
