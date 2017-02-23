@@ -18,6 +18,7 @@ class BandsTableViewController: UITableViewController {
         print("+++> 1 <++++++++++++++++++++++++++++++")
 
         let radiohead: Band = Band(nameAndHomeTownAndBirthDate: "Radiohead", homeTown: "Leeds", birthDate: NSDate());
+        print("accessing readonly property: \(radiohead.hometown)")
         let beatles: Band = Band(nameAndHomeTownAndBirthDate: "Beatles", homeTown: "Liverpool", birthDate: NSDate());
         let u2: Band = Band(nameAndHomeTown: "U2", homeTown: "Dublin");
         let rem: Band = Band(nameAndHomeTownAndBirthDate: "REM", homeTown: "Athens", birthDate: NSDate());

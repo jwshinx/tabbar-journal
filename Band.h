@@ -13,7 +13,7 @@
 
 @property NSString* name;
 @property NSDate* birthdate;
-@property NSString* hometown;
+@property (readonly) NSString* hometown;
 @property NSMutableArray* discography;
 
 - (void) addAlbum:(Album*)album;

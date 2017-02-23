@@ -8,6 +8,12 @@
 
 #import "Band.h"
 
+@interface Band ()
+
+@property NSString* hometown;
+
+@end
+
 @implementation Band
 - (Band*)init
 {
