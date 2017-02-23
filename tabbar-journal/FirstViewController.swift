@@ -20,7 +20,6 @@ class FirstViewController: UIViewController {
         NSUserDefaults.standardUserDefaults().setObject("Joel Shin", forKey: "name")
         self.updateDateLabel()
         self.updateNameLabel()
-
     }
     
     func updateNameLabel() {

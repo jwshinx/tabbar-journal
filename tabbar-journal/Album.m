@@ -36,7 +36,7 @@
 
 -(NSString *)description
 {
-    NSString* newString = [NSString stringWithFormat:@"%@ - %i - %i",
+    NSString* newString = [NSString stringWithFormat:@"%@ (%i) $%iM",
                            _title, _year, _revenue];
     return newString;
     

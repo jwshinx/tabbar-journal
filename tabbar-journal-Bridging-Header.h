@@ -4,3 +4,4 @@
 
 #import "Band.h"
 #import "Album.h"
+#import "Album+MathHelpers.h"

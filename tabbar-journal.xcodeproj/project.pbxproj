@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		182661301E4C5737006A043A /* Band.m in Sources */ = {isa = PBXBuildFile; fileRef = 1826612F1E4C5737006A043A /* Band.m */; };
 		182661331E5436D3006A043A /* Album.m in Sources */ = {isa = PBXBuildFile; fileRef = 182661321E5436D3006A043A /* Album.m */; };
+		182661371E5ECCFC006A043A /* Album+MathHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 182661361E5ECCFC006A043A /* Album+MathHelpers.m */; };
 		184469E81E357DBB00ACACCB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 184469E71E357DBB00ACACCB /* AppDelegate.swift */; };
 		184469EA1E357DBB00ACACCB /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 184469E91E357DBB00ACACCB /* FirstViewController.swift */; };
 		184469EC1E357DBB00ACACCB /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 184469EB1E357DBB00ACACCB /* SecondViewController.swift */; };
@@ -61,6 +62,8 @@
 		1826612F1E4C5737006A043A /* Band.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Band.m; path = ../Band.m; sourceTree = "<group>"; };
 		182661311E5436D3006A043A /* Album.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Album.h; sourceTree = "<group>"; };
 		182661321E5436D3006A043A /* Album.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Album.m; sourceTree = "<group>"; };
+		182661351E5ECCFC006A043A /* Album+MathHelpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Album+MathHelpers.h"; sourceTree = "<group>"; };
+		182661361E5ECCFC006A043A /* Album+MathHelpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Album+MathHelpers.m"; sourceTree = "<group>"; };
 		184469E41E357DBB00ACACCB /* tabbar-journal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "tabbar-journal.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		184469E71E357DBB00ACACCB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		184469E91E357DBB00ACACCB /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
@@ -126,6 +129,8 @@
 			children = (
 				182661311E5436D3006A043A /* Album.h */,
 				182661321E5436D3006A043A /* Album.m */,
+				182661351E5ECCFC006A043A /* Album+MathHelpers.h */,
+				182661361E5ECCFC006A043A /* Album+MathHelpers.m */,
 				1826612E1E4C5737006A043A /* Band.h */,
 				1826612F1E4C5737006A043A /* Band.m */,
 			);
@@ -372,6 +377,7 @@
 				18446A1A1E359D1F00ACACCB /* AlbumsTableViewController.swift in Sources */,
 				18827E741E41E2F8003F7BE0 /* ItalyImageFeedTableViewController.swift in Sources */,
 				18827E7E1E41EA08003F7BE0 /* ItalyFeed.swift in Sources */,
+				182661371E5ECCFC006A043A /* Album+MathHelpers.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

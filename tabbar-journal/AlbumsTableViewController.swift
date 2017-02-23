@@ -65,7 +65,7 @@ class AlbumsTableViewController: UITableViewController {
         cell.textLabel?.text = (selectedBand?.discography)![indexPath.row].title
         if selectedBand?.discography != nil {
             for album in (selectedBand?.discography)! {
-                print("---> album: \(album.description)");
+                print("---> album: \(album.description) -- Published \(album.yearsSincePublished(album.year)) years ago");
             }
         }
         // cell.textLabel?.text = selectedBand!.discography[indexPath.row]
