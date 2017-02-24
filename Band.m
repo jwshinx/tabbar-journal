@@ -85,11 +85,14 @@
     }
     return self;
 }
-
+-(NSString *)manager
+{
+    return @"Big Vito";
+}
 -(NSString *)description
 {
-    NSString* newString = [NSString stringWithFormat:@"%@ - %@ - %@",
-                           _name, _hometown, _birthdate];
+    NSString* newString = [NSString stringWithFormat:@"%@ - %@ - %@ - %@",
+                           _name, _hometown, _birthdate, self.manager];
     return newString;
 }
 @end

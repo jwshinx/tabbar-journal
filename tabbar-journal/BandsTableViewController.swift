@@ -30,6 +30,10 @@ class BandsTableViewController: UITableViewController {
         
         initializeAlbums()
         
+        for band in artists {
+            print("xxx> \(band.description())")
+        }
+        
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 

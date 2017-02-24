@@ -8,8 +8,9 @@
 
 #import <Foundation/Foundation.h>
 #import "Album.h"
+#import "Overhead.h"
 
-@interface Band : NSObject
+@interface Band : NSObject <Overhead>
 
 @property NSString* name;
 @property NSDate* birthdate;

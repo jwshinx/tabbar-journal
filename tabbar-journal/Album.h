@@ -7,8 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "Overhead.h"
 
-@interface Album : NSObject
+@interface Album : NSObject <Overhead>
 
 @property NSString* title;
 @property int year;

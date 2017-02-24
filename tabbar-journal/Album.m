@@ -41,11 +41,15 @@
     return @"Hello";
 }
 
+-(NSString *)manager
+{
+    return @"Tiny Tim";
+}
+
 -(NSString *)description
 {
-    NSString* hello = self.greeting;
-    NSString* newString = [NSString stringWithFormat:@"%@, %@ (%i) $%iM",
-                            self.greeting, _title, _year, _revenue];
+    NSString* newString = [NSString stringWithFormat:@"%@, %@ (%i) $%iM %@",
+                            self.greeting, _title, _year, _revenue, self.manager];
     return newString;
     
 }
